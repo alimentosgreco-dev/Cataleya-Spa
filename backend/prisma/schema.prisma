@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum EstadoReserva {
+  pendiente
+  pagado
+  cancelado
+  completado
+}
+
+enum EstadoPago {
+  pendiente
+  aprobado
+  rechazado
+  cancelado
+}
+
+model Cliente {
+  id            String    @id @default(uuid())
+  nombre        String
+  correo        String
+  telefono      String
+  fechaCreacion DateTime  @default(now()) @map("fecha_creacion")
+  reservas      Reserva[]
+
+  @@unique([correo])
+  @@map("clientes")
+}
+
+model Tratamiento {
+  id          String    @id
+  nombre      String
+  descripcion String?
+  precio      Decimal   @db.Decimal(10, 2)
+  duracion    Int       @default(60)
+  reservas    Reserva[]
+
+  @@map("tratamientos")
+}
+
+model Reserva {
+  id            String        @id @default(uuid())
+  clienteId     String        @map("cliente_id")
+  tratamientoId String        @map("tratamiento_id")
+  fecha         DateTime      @db.Date
+  hora          String
+  comentarios   String?
+  estado        EstadoReserva @default(pendiente)
+  cliente       Cliente       @relation(fields: [clienteId], references: [id])
+  tratamiento   Tratamiento   @relation(fields: [tratamientoId], references: [id])
+  pago          Pago?
+
+  @@index([fecha, hora])
+  @@index([estado])
+  @@map("reservas")
+}
+
+model Pago {
+  id           String     @id @default(uuid())
+  reservaId    String     @unique @map("reserva_id")
+  paymentId    String?    @map("payment_id")
+  preferenceId String?    @map("preference_id")
+  monto        Decimal    @db.Decimal(10, 2)
+  estado       EstadoPago @default(pendiente)
+  fechaPago    DateTime?  @map("fecha_pago")
+  reserva      Reserva    @relation(fields: [reservaId], references: [id], onDelete: Cascade)
+
+  @@map("pagos")
+}
