@@ -1,0 +1,59 @@
+[
+  {
+    "route": "/",
+    "firstLoadUncompressedJsBytes": 800609,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/08k-poc8e3n9u.js",
+      ".next/static/chunks/0d3shmwh5_nmn.js",
+      ".next/static/chunks/0gyw~1x6due7s.js",
+      ".next/static/chunks/0n_cvbf5~arm-.js",
+      ".next/static/chunks/0j00jkkb0d1wh.js",
+      ".next/static/chunks/0tovalyuwh.-8.js",
+      ".next/static/chunks/0tszvp5wpnn-t.js",
+      ".next/static/chunks/10u3y4bw1ayzs.js",
+      ".next/static/chunks/0imr3j_iy8.ac.js",
+      ".next/static/chunks/turbopack-00uayxaws2v04.js"
+    ]
+  },
+  {
+    "route": "/error",
+    "firstLoadUncompressedJsBytes": 559586,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/08k-poc8e3n9u.js",
+      ".next/static/chunks/0d3shmwh5_nmn.js",
+      ".next/static/chunks/0g29e2936_lwm.js",
+      ".next/static/chunks/0tovalyuwh.-8.js",
+      ".next/static/chunks/0tszvp5wpnn-t.js",
+      ".next/static/chunks/10u3y4bw1ayzs.js",
+      ".next/static/chunks/0imr3j_iy8.ac.js",
+      ".next/static/chunks/turbopack-00uayxaws2v04.js"
+    ]
+  },
+  {
+    "route": "/success",
+    "firstLoadUncompressedJsBytes": 559586,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/08k-poc8e3n9u.js",
+      ".next/static/chunks/0d3shmwh5_nmn.js",
+      ".next/static/chunks/0g29e2936_lwm.js",
+      ".next/static/chunks/0tovalyuwh.-8.js",
+      ".next/static/chunks/0tszvp5wpnn-t.js",
+      ".next/static/chunks/10u3y4bw1ayzs.js",
+      ".next/static/chunks/0imr3j_iy8.ac.js",
+      ".next/static/chunks/turbopack-00uayxaws2v04.js"
+    ]
+  },
+  {
+    "route": "/_not-found",
+    "firstLoadUncompressedJsBytes": 552561,
+    "firstLoadChunkPaths": [
+      ".next/static/chunks/08k-poc8e3n9u.js",
+      ".next/static/chunks/0d3shmwh5_nmn.js",
+      ".next/static/chunks/0tovalyuwh.-8.js",
+      ".next/static/chunks/0tszvp5wpnn-t.js",
+      ".next/static/chunks/10u3y4bw1ayzs.js",
+      ".next/static/chunks/0imr3j_iy8.ac.js",
+      ".next/static/chunks/turbopack-00uayxaws2v04.js"
+    ]
+  }
+]

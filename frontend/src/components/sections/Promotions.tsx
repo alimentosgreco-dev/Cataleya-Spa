@@ -10,18 +10,18 @@ import { Reveal } from "@/components/ui/Reveal";
 export function Promotions() {
   return (
     <section
-      id="promotions"
-      className="py-24 bg-gradient-to-b from-white to-[#f8f8f6]"
+      id="promociones"
+      className="py-24 bg-gradient-to-b from-white via-[#faf9fc] to-white"
     >
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading
-          badge="Ofertas Especiales"
+          eyebrow="Ofertas Especiales"
           title="Promociones del Mes"
           subtitle="Descubre experiencias exclusivas diseñadas para consentirte, relajarte y renovar tu bienestar."
         />
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
-          
+        {/* PROMOCIONES */}
+        <div className="mt-16 grid gap-8 md:grid-cols-2">
           {/* PROMOCIÓN 1 */}
           <Reveal>
             <motion.article
@@ -42,7 +42,7 @@ export function Promotions() {
                   src="/img/promo/promo1.jpg"
                   alt="Promoción Facial Premium"
                   fill
-                  sizes="(max-width:768px) 100vw, 33vw"
+                  sizes="(max-width:768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -82,57 +82,8 @@ export function Promotions() {
             </motion.article>
           </Reveal>
 
-          {/* VIDEO */}
-          <Reveal delay={0.1}>
-            <motion.article
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
-              className="
-                overflow-hidden
-                rounded-3xl
-                bg-white
-                border
-                border-[#6F498C]/10
-                shadow-lg
-                hover:shadow-2xl
-              "
-            >
-              <div className="relative aspect-[9/16]">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="h-full w-full object-cover"
-                >
-                  <source
-                    src="/img/promo/promo2.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-[#6F498C]">
-                  <Sparkles size={18} />
-                  <span className="font-medium">
-                    Experiencia Cataleya
-                  </span>
-                </div>
-
-                <h3 className="mt-3 text-2xl font-bold text-[#111111]">
-                  Vive la Experiencia Spa
-                </h3>
-
-                <p className="mt-3 text-[#6B7280]">
-                  Un espacio diseñado para desconectarte del estrés y reconectar con tu bienestar.
-                </p>
-              </div>
-            </motion.article>
-          </Reveal>
-
           {/* PROMOCIÓN 2 */}
-          <Reveal delay={0.2}>
+          <Reveal delay={0.1}>
             <motion.article
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
@@ -151,7 +102,7 @@ export function Promotions() {
                   src="/img/promo/promo2.jpg"
                   alt="Promoción Masaje Relajante"
                   fill
-                  sizes="(max-width:768px) 100vw, 33vw"
+                  sizes="(max-width:768px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -191,6 +142,56 @@ export function Promotions() {
             </motion.article>
           </Reveal>
         </div>
+
+        {/* VIDEO COMPLETO ABAJO */}
+        <Reveal delay={0.2}>
+          <motion.article
+            whileHover={{ y: -5 }}
+            transition={{ duration: 0.3 }}
+            className="
+              mt-10
+              overflow-hidden
+              rounded-3xl
+              bg-white
+              border
+              border-[#6F498C]/10
+              shadow-xl
+            "
+          >
+            <div className="relative">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="w-full h-auto"
+              >
+                <source
+                  src="/img/promo/promo2.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div className="p-8 text-center">
+              <div className="flex items-center justify-center gap-2 text-[#6F498C]">
+                <Sparkles size={20} />
+                <span className="font-semibold">
+                  Experiencia Cataleya
+                </span>
+              </div>
+
+              <h3 className="mt-4 text-3xl font-bold text-[#111111]">
+                Vive la Experiencia Spa
+              </h3>
+
+              <p className="mt-4 max-w-3xl mx-auto text-[#6B7280]">
+                Un espacio diseñado para desconectarte del estrés, revitalizar tu energía y disfrutar de momentos de bienestar, relajación y belleza.
+              </p>
+            </div>
+          </motion.article>
+        </Reveal>
       </div>
     </section>
   );
